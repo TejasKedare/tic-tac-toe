@@ -1,0 +1,21 @@
+<div class="titleField">
+
+  <p class="title">TIC - TAC - TOE</p>
+  <p class="winnerIs" *ngIf="winner">And The winner is:
+    <span
+      [ngClass]="currentPlayer == 'player1' ? 'player1W': this.currentPlayer == 'player2' ? 'player2W' :''">{{winner}}
+    </span>
+  </p>
+
+</div>
+
+<div class="grid-container">
+  <div id="playField">
+    <div>
+      <span (mouseover)="hovered = true" (mouseout)="hovered = false" *ngFor="let item of totalBox(9); let i = index"
+        (click)="getBoxIndex(i+1,$event)"> - </span>
+    </div>
+  </div>
+</div>
+
+<!--  -->

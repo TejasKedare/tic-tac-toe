@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#playField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#playField div {
+    width: 450px;
+    height: 450px;
+}
+
+#playField span {
+    font-size: 35px;
+    width: 120px;
+    height: 120px;
+    float: left;
+    display: block;
+    border: 1px solid;
+    text-align: center;
+    line-height: 121px;
+    cursor: pointer;
+    font-weight: 400;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: darkgrey;
+
+    // background-color: #f2f2f2;
+}
+
+#playField span:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.titleField {
+    display: flex;
+    border-bottom: 1px solid;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.player1 {
+    background: #B3CEE5;
+    color: white;
+
+}
+
+.player2 {
+    background: #DC143C;
+    color: white;
+
+}
+
+.player1W {
+    color: #B3CEE5;
+}
+
+.player2W {
+    color: #DC143C;
+}
+
+
+.winnerIs {
+    margin-top: 12px;
+    width: 265px;
+    font-size: 20px;
+}
