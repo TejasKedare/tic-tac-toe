@@ -1,3 +1,6 @@
+$player1: crimson;
+$player2: teal;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -52,23 +55,24 @@
 }
 
 .player1 {
-    background: #B3CEE5;
+    background: $player2;
     color: white;
 
 }
 
 .player2 {
-    background: #DC143C;
+    background: $player1;
     color: white;
 
 }
 
 .player1W {
-    color: #B3CEE5;
+    color: $player1;
 }
 
 .player2W {
-    color: #DC143C;
+    color: $player2;
+
 }
 
 
