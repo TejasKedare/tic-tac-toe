@@ -32,8 +32,10 @@ export class AppComponent {
     this.gameGrid = this.winningCombinations
   }
 
+  // to get index and event of a particular box clicked on grid and set values and styles respectively
   getBoxIndex(index: number, event: any) {
 
+    // to add X/0 and styling to gird based on player
     if (this.stopTheGame == false) {
       this.currentPlayer == 'player1' ? event.target.innerHTML = this.player1 : event.target.innerHTML = this.player2
       this.currentPlayer == 'player1' ? event.target.classList.add("player1") : event.target.classList.add("player2")
@@ -45,17 +47,22 @@ export class AppComponent {
         value: event.target.innerHTML,
       }
 
-      this.createGameGrid(gameValue)
+      this.calculateWinner(gameValue)
     }
   }
 
-  createGameGrid(gameValue: any) {
+
+  // to get winner
+  calculateWinner(gameValue: any) {
+
+    // replace numbers in 'this.gameGrid' with X/0 
     this.gameGrid.map((e: any[]) => {
       var index = e.indexOf(gameValue.index);
       if (~index) {
         e[index] = gameValue.value;
       }
 
+      // if every character in 'this.gameGrid' array is same that player is winner
       if (e.every(v => v == 'X')) {
         this.winner = 'PLAYER 1'
         this.stopTheGame = true
@@ -70,6 +77,7 @@ export class AppComponent {
     })
   }
 
+  // to switch player after every click
   switchPlayer() {
     this.currentPlayer = this.currentPlayer == 'player1' ? 'player2' : 'player1'
     this.clickCount++
